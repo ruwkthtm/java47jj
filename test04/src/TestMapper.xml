@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+ 					
+<mapper namespace="TestMapper">
+
+	<resultMap id="testSelectMap" type="test.Domain">
+		<result property="name" column="name" jdbcType="VARCHAR"/>
+		<result property="age" column="age" jdbcType="INTEGER"/>
+		<result property="gender" column="gender" jdbcType="VARCHAR"/>
+		<result property="nation" column="nation" jdbcType="VARCHAR"/>
+		<result property="regDate" column="reg_date" jdbcType="DATE"/>
+	</resultMap>
+	
+	<select id="selectList" resultMap="testSelectMap">
+		SELECT
+		name, age, gender, nation, reg_date
+		FROM test
+	</select>
+	
+</mapper>
